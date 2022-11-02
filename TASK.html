@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>About Me</title>
 
     <style>
@@ -11,46 +11,121 @@
             margin-left: auto;
             margin-right: auto;
           }
+        .tengah {
+            margin: auto;
+            width: 30%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+          }
     </style>
 
 </head>
 <body>
     <div style="text-align: center;">
-
         <h1>Profile</h1>
         <div style="text-align: left;">
            <table class="center">
             <tr>
-                <th>Nama</th>
-                <th>:</th>
-                <th>Faisal Reza Rahmat</th>
+                <td>Nama</td>
+                <td>:</td>
+                <td>Faisal Reza Rahmat</td>
             </tr>
             <tr>
-                <th>Asal</th>
-                <th>:</th>
-                <th>Rembang, Jawa Tengah</th>
+                <td>Asal</td>
+                <td>:</td>
+                <td>Rembang, Jawa Tengah</td>
             </tr>
             <tr>
-                <th>Pendidikan</th>
-                <th>:</th>
-                <th>Teknik Informatika, UPN Veteran Yogyakarta</th>
+                <td>Pendidikan</td>
+                <td>:</td>
+                <td>Teknik Informatika, UPN Veteran Yogyakarta</td>
             </tr>
             <tr>
-                <th>Tentang Saya</th>
-                <th>:</th>
-                <th>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus odio quia delectus ab, ea distinctio enim. Perspiciatis corporis eveniet dignissimos beatae nisi. Quod qui velit impedit, dolorem sint exercitationem dicta?</th>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td>Laki-laki</td>
             </tr>
             <tr>
-                <th>Media Sosial</th>
-                <th>:</th>
-                <th>
+                <td>Tentang Saya</td>
+                <td>:</td>
+                <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora id eaque </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:</td>
+                <td>
+                    <ul>
+                        <li>Renang</li>
+                        <li>Main Game</li>
+                        <li>Tidur</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Media Sosial</td>
+                <td>:</td>
+                <td>
                     <a href="https://web.facebook.com/profile.php?id=100007343267622"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png" alt="no image" height="13" width="13"></a>
                     <a href="https://wa.me/089601036313"><img src="assets\wa2.webp" alt="no image" height="13" width="13"></a>
-                </th>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><audio src="assets\audio\Akebushi Wind.mp3" controls loop autoplay></audio></td>
             </tr>
         </table> 
         </div>
-        
+    </div>
+    <br><br>
+    
+    <div class="tengah">
+        <h3>Input Form</h3>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td><input type="text"><br></td>
+                </tr>
+                <tr>
+                    <td>Asal</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Pendidikan</td>
+                    <td><input type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>
+                        <input type="radio" id="kelamin1" name="kelamin" value="Laki-laki">
+                        <label for="age1">Laki-laki</label><br>
+                        <input type="radio" id="kelamin2" name="kelamin" value="Perempuan">
+                        <label for="age2">Perempuan</label><br> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tentang Saya</td>
+                    <td><textarea name="" id="" cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Hobby</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Url Sosmed</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Telepon</td>
+                    <td><input type="text"></td>
+                </tr>
+            </table> 
+            <br>
+            <input type="button" value="Submit !">
+        </form>
 
     </div>
 </body>
