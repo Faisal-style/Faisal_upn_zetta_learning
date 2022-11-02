@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item</title>
+
+    <style>
+        .tengah {
+            margin: auto;
+            width: 30%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+          }
+    </style>
+</head>
+<body>
+    <div><a href="ItemList.html">Go To Item List</a></div>
+    <section id="section1">
+        <div class="tengah">
+            <h3>Form Item</h3>
+            <form action="itemInput.php" method="POST">
+                <table>
+                    <tr>
+                        <td>Nama Item</td>
+                        <td><input type="text" name="nama"><br></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Item</td>
+                        <td>
+                            <select name="Jenis" id="jns">
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Alat Dapur">Alat Dapur</option>
+                                <option value="Furniture">Furniture</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kuantitas</td>
+                        <td><input type="number" name="kuantitas" id="" min="1" max="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Pembayaran</td>
+                        <td>
+                            <input type="radio" id="tunai" name="pembayaran" value="Tunai">
+                            <label for="tunai">Tunai</label>
+                            <input type="radio" id="ovo" name="pembayaran" value="Ovo">
+                            <label for="ovo">Ovo</label><br> 
+                            <input type="radio" id="gopay" name="pembayaran" value="Gopay">
+                            <label for="gopay">Gopay</label>
+                            <input type="radio" id="ShopeePay" name="pembayaran" value="ShopeePay">
+                            <label for="ShopeePay">ShopeePay</label><br> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi Item</td>
+                        <td><textarea name="" id="" cols="20" rows="5"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Harga Item</td>
+                        <td><input type="number" name="harga" id="" min="1" max="10000000000000"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Pembelian</td>
+                        <td><input type="date" name="tanggal" id=""></td>
+                    </tr>
+                    <tr>
+                        <td>Tempat Pembelian</td>
+                        <td><input type="text" name="tempat"></td>
+                    </tr>
+                    <tr>
+                        <td>Gambar Item</td>
+                        <td><input type="file" name="gambar" accept="image/png, image/gif, image/jpeg"  id=""></td>
+                    </tr>
+                </table> 
+                <br>
+                <input type="button" value="Submit !">
+            </form>
+            <br>
+            <button onclick="location.href= '#section2'">Section2 !</button>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="tengah" id="section2">
+        <h3>Display Item</h3>
+        <table>
+            <tr><td align="center"><img width="50%" src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2020/10/17/7a67bc81-9890-4fd2-864d-8e7f1f5e65d0.png" alt=""></td></tr>
+            <tr><td align="center">Kursi</td></tr>
+        </table>
+        <br>
+        <br>
+            <button onclick="location.href= '#section1'">Section1 !</button>
+    </section>
+</body>
+</html>
