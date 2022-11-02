@@ -1,9 +1,16 @@
 <h1>cashier works!</h1>
 <br>
 <ul>
-    <li *ngFor="let item of items">
+    <div class="flex-container">
+        <div *ngFor="let item of items">
+        <li >
         <h3>{{item.name}}</h3>
         <h3>{{item.harga}}</h3>
     </li>
+    </div>
+    </div>
+    
+    
     
 </ul>
+
