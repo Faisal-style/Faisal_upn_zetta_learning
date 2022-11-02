@@ -3,10 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CashierModule } from './cashier/cashier.module';
+import { CashierComponent } from './cashier/cashier/cashier.component';
+import { MenuComponent } from './cashier/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    CashierComponent
   ],
   imports: [
     BrowserModule,
