@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CashierModule } from './cashier/cashier.module';
 import { CashierComponent } from './cashier/cashier/cashier.component';
 import { MenuComponent } from './cashier/menu/menu.component';
+import { PaymentComponent } from './cashier/payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    CashierComponent
+    CashierComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

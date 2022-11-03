@@ -1,5 +1,6 @@
-import { Component, getNgModuleById, OnInit } from '@angular/core';
+import { Component, EventEmitter, getNgModuleById, OnInit, Output } from '@angular/core';
 export interface item{id:number, name:string, harga:number}
+export interface SelectedItem{id:number, name:string, harga:number, amount:number}
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -20,9 +21,22 @@ export class MenuComponent implements OnInit {
     {id : 11, name :"Coffe Latte", harga: 10000},
     {id : 12, name :"Coffe Latte", harga: 10000},
   ]
+  public selectedItem: SelectedItem[] = []
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Output() sendData = new EventEmitter<any>()
+  
+  additem(item:item){
+    const duplicatedItemIndex = this.selectedItem.findIndex(({id}) => id === item.id)
+    if (duplicatedItemIndex >= 0) {
+      this.selectedItem[duplicatedItemIndex].amount+=1
+    }else{
+      this.selectedItem.push({...item, amount:1})
+      this.sendData.emit(this.selectedItem)
+    }
   }
 
 }

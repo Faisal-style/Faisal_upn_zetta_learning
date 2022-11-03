@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_learning';
+  dataPayment : {id:number, name:string, harga:number, amount:number}[] = []
+  receiveMenu($event:any){
+    this.dataPayment = $event;
+    console.log(this.dataPayment);
+  }
 }
