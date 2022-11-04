@@ -1,1 +1,14 @@
-<p>menu works!</p>
+<h2>Menu</h2>
+
+<!-- <section class="menu-list">
+  <div *ngFor="let item of items">
+    <div class="card"></div>
+  </div>
+</section> -->
+
+<ul>
+  <li *ngFor="let item of items" (click)="additem(item)">
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.harga }}</p>
+  </li>
+</ul>
