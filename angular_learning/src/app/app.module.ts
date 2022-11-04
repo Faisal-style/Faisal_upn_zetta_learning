@@ -17,7 +17,8 @@ import { PaymentComponent } from './cashier/payment/payment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CashierModule
   ],
   providers: [],
   bootstrap: [AppComponent]

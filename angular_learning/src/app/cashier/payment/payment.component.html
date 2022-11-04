@@ -2,4 +2,5 @@
 <p *ngFor="let payment of payments">
   <span>{{ payment.amount }}x {{ payment.name }}</span>
   <span>Rp {{ payment.harga }}</span>
+  <span><button (click)="removeItem(payment)">remove</button></span>
 </p>
