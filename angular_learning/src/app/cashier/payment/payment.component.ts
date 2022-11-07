@@ -1,5 +1,12 @@
 import { outputAst } from '@angular/compiler';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { SelectedItem } from '../menu/menu.component';
 
 @Component({
@@ -12,11 +19,19 @@ export class PaymentComponent implements OnInit {
   @Output() itemchanges: EventEmitter<SelectedItem[]> = new EventEmitter<
     SelectedItem[]
   >();
+  public total: number = 0;
 
   // private selectedItemSource: selectedItem = new selectedItem([]);
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngAfterContentChecked(): void {
+    this.total = this.payments.reduce(
+      (total, item) => (total += item.amount * item.harga),
+      0
+    );
+  }
 
   removeItem(itemToBeRemoved: SelectedItem) {
     const itemIndex = this.payments.findIndex(

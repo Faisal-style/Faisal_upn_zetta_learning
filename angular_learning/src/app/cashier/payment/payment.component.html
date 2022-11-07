@@ -1,6 +1,12 @@
 <h2>Payment</h2>
+
 <p *ngFor="let payment of payments">
   <span>{{ payment.amount }}x {{ payment.name }}</span>
   <span>Rp {{ payment.harga }}</span>
   <span><button (click)="removeItem(payment)">remove</button></span>
 </p>
+<ng-template
+  *ngIf="payments.length > 0; then totalpayment; else noitem"
+></ng-template>
+<ng-template #totalpayment> Total Rp{{ total }}</ng-template>
+<ng-template #noitem><p>no selected item</p></ng-template>
