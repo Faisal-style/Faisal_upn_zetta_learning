@@ -1,13 +1,8 @@
 import { outputAst } from '@angular/compiler';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
-import { SelectedItem } from '../menu/menu.component';
+import { Component, OnInit } from '@angular/core';
+import { CashierService, SelectedItems } from '../../cashier.service';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-payment',
@@ -15,33 +10,30 @@ import { SelectedItem } from '../menu/menu.component';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
-  @Input() public payments: SelectedItem[] = [];
-  @Output() itemchanges: EventEmitter<SelectedItem[]> = new EventEmitter<
-    SelectedItem[]
-  >();
-  public total: number = 0;
+  public items: Observable<SelectedItems[]>;
+  public total: Observable<number>;
 
   // private selectedItemSource: selectedItem = new selectedItem([]);
-  constructor() {}
+  constructor(private CashierService: CashierService) {
+    this.items = this.CashierService.selectedItems$;
+    this.total = this.CashierService.selectedItems$.pipe(
+      map((items) =>
+        items.reduce((total, item) => (total += item.amount * item.harga), 0)
+      )
+    );
+  }
 
   ngOnInit(): void {}
 
   ngAfterContentChecked(): void {
-    this.total = this.payments.reduce(
-      (total, item) => (total += item.amount * item.harga),
-      0
+    this.total = this.CashierService.selectedItems$.pipe(
+      map((items) =>
+        items.reduce((total, item) => (total += item.amount * item.harga), 0)
+      )
     );
   }
 
-  removeItem(itemToBeRemoved: SelectedItem) {
-    const itemIndex = this.payments.findIndex(
-      ({ id }) => id === itemToBeRemoved.id
-    );
-    if (this.payments[itemIndex].amount > 1) {
-      this.payments[itemIndex].amount -= 1;
-    } else {
-      this.payments.splice(itemIndex, 1);
-      console.log(this.payments);
-    }
+  removeitem(item: SelectedItems) {
+    this.CashierService.removeItem(item);
   }
 }

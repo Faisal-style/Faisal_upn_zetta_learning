@@ -7,7 +7,7 @@
 </section> -->
 
 <ul>
-  <li *ngFor="let item of items" (click)="additem(item)">
+  <li *ngFor="let item of items | async" (click)="additem(item)">
     <h3>{{ item.name }}</h3>
     <p>{{ item.harga }}</p>
   </li>
