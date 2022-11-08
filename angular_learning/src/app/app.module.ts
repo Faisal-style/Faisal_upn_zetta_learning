@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { CashierModule } from './cashier/cashier.module';
 import { MenuComponent } from './cashier/menu/menu.component';
 import { PaymentComponent } from './cashier/payment/payment.component';
+import { CashierRoutingModule } from './cashier/cashier-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, PaymentComponent],
-  imports: [BrowserModule, AppRoutingModule, CashierModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, CashierRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
