@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { EmployeeComponent } from './employee/employee.component';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    component: EmployeeComponent,
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: '',
+  },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class EmployeeRoutingModule { }
+export class EmployeeRoutingModule {}
