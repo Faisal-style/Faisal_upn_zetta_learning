@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CashierService, Item } from '../../cashier.service';
+import { CashierService, Item } from '../cashier.service';
 export interface items {
   id: number;
   name: string;

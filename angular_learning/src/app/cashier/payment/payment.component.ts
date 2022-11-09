@@ -1,6 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { CashierService, SelectedItems } from '../../cashier.service';
+import { CashierService, SelectedItems } from '../cashier.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
